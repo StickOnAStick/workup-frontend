@@ -1,6 +1,7 @@
 'use client';
 import '../styles/dist.css'
 import React, { useState } from 'react';
+import GlobalNavBar from '../components/globalNav';
 import Image from 'next/image';
 export default function RootLayout({
   children,
@@ -19,9 +20,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="h-full w-full">
-                
-        <main className=''>
+      <body className=" bg-neutral-900">
+        <nav>
+          <GlobalNavBar/>
+        </nav>
+        <main>
           {children}
         </main>
       </body>
