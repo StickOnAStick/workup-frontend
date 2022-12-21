@@ -1,7 +1,7 @@
 'use client';
 import '../styles/dist.css'
 import React, { useState } from 'react';
-import GlobalNavBar from '../components/globalNav';
+import GlobalNavBar from './NavBar';
 import Image from 'next/image';
 export default function RootLayout({
   children,
