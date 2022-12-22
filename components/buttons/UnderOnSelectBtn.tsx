@@ -9,7 +9,7 @@ export default function UnderOnSelectBtn ({
     children: React.ReactNode
 }) {
     return (
-    <div className="bg-neutral-800 hover:bg-neutral-700 p-3 rounded-lg flex flex-row hover:cursor-pointer font-bold tracking-wide">
+    <div className="bg-neutral-800 hover:bg-neutral-700 w-28 h-12 rounded-lg flex justify-center items-center hover:cursor-pointer font-bold tracking-wide ">
         <span className=" border-b border-b-blue-700 ">
             {children}
         </span>
