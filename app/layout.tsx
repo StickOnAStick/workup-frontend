@@ -1,7 +1,7 @@
 
 import '../styles/dist.css'
 import React, { useState } from 'react';
-import GlobalNavBar from './GlobalNavBar';
+import GlobalNavBar from '../components/main/globalNav/GlobalNavBar';
 import Image from 'next/image';
 export default function RootLayout({
   children,
