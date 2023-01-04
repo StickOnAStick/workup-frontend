@@ -3,8 +3,8 @@ import NavBarIcons from "./NavBarIcons";
 export default function GlobalNavBar () {
    
     return (
-        <div className="bg-neutral-800 h-28 md:h-14 border-b border-b-neutral-600 inline-block align-middle w-full">
-            <div className="py-1 px-3 md:px-5 grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1 gap-3 md:gap-0 items-center ">
+        <div className="bg-neutral-800 h-24 md:h-14 border-b border-b-neutral-600 inline-block align-middle w-full">
+            <div className="py-1 px-3 md:px-5 grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1 gap-0 md:gap-0 items-center ">
             
                 {/* Image to go here */}
                 <div className="flex justify-start">

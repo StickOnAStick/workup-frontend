@@ -1,6 +1,3 @@
-'use client';
-//TODO: Add links when other pages are made;;; Add underbar on only on selected
-
 
 export default function UnderOnSelectBtn ({
     children,
@@ -17,7 +14,8 @@ export default function UnderOnSelectBtn ({
         <div>
             {children}
         </div>
-        <span className={`${active ? ' absolute h-[3px] w-full bottom-0 md:bottom-[-4px] bg-blue-500 rounded-md': ''}`}/>
+        <span className={`${active ? ' absolute h-[3px] w-full bottom-1 md:bottom-[-4px] bg-blue-500 rounded-md': ''}`}/>
+        
     </div>
     );
 
