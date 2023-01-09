@@ -11,7 +11,7 @@ export default function Account ({
                 <Link href="/login">
                     <FiUser size={28}/>
                 </Link>
-                <div className="hidden group-focus:hidden group-hover:flex absolute bottom-[-55%] bg-neutral-400 rounded-md font-bold px-1 ">
+                <div className="hidden transition-opacity opacity-0 group-hover:bg-opacity-100 delay-300 ease-in group-focus:hidden group-hover:flex absolute bottom-[-55%] bg-neutral-400 rounded-md font-bold px-1 ">
                     Login
                 </div>
             </div>
