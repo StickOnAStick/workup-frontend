@@ -10,13 +10,13 @@ export default function RootLayout({
 }) {
 
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className=" bg-neutral-900" id="root">
+      <body className=" bg-neutral-900">
         <nav>
           <GlobalNavBar/>
         </nav>
