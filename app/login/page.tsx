@@ -17,8 +17,7 @@ export default function Login () {
         .authWithPassword(loginData.email, loginData.pass)
         .then(()=>{
             if(pb.authStore.isValid){
-                console.log("Login successful. Auth valid: " + pb.authStore.isValid)
-                console.log();
+                console.log("Login successful. Auth valid: " + pb.authStore.isValid);
                 router.push('/');
             }
         }).catch((error)=>{
