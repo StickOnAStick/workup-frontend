@@ -1,22 +1,29 @@
 'use client';
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import PocketBase from 'pocketbase'
 import {useState} from 'react';
 import { LoginData } from "../../types/UserData/LoginData";
 
 export default function Login () {
-
+    const router = useRouter();
     const [loginData, setLoginData] = useState<LoginData>({email: "", pass: ""});
     
     const pb = new PocketBase('http://127.0.0.1:8090')
     
     const onSubmit = async () => {
-        
-        const authData = await pb.collection('users').authWithPassword(loginData.email, loginData.pass)
-        console.log(pb.authStore.isValid)
-        
         console.log(loginData)
-        console.log(authData)
+        await pb.collection('users')
+        .authWithPassword(loginData.email, loginData.pass)
+        .then(()=>{
+            if(pb.authStore.isValid){
+                console.log("Login successful. Auth valid: " + pb.authStore.isValid)
+                console.log();
+                router.push('/');
+            }
+        }).catch((error)=>{
+            console.log("Error occured:\n" + error)
+        })
     }
 
     return (

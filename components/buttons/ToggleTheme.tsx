@@ -1,16 +1,27 @@
 'use client';
-import { setSyntheticLeadingComments } from "typescript";
-import useThemeSwitcher from "../../hooks/useThemeSwitcher";
+import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
+import useDarkMode from "../../hooks/useDarkMode";
 
 export const ToggleTheme = () => {
     
-    const setTheme = () => {
-        document.documentElement.dataset.theme = "dark" ? "light" : "dark";
-    };
+    const [mounted, setMounted] = useState(false);
+
+    const { systemTheme, theme, setTheme } = useTheme();
+
+    useEffect(()=> {
+        setMounted(true);
+    }, []);
+
+    if(!mounted) return null;
+
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+
+    
 
     return (
         <button className="rounded-lg dark:bg-blue-600 bg-white border-black dark:border-white"
-                onClick={()=> setTheme()}>
+                onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}>
             <div>Toggle Theme</div>
         </button>
     )

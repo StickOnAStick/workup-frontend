@@ -1,8 +1,9 @@
-
 import '../styles/dist.css'
-import React, { useState } from 'react';
+import React from 'react';
 import GlobalNavBar from '../components/main/globalNav/GlobalNavBar';
-import Image from 'next/image';
+//import ThemeProvider from './ThemeProvider';
+import { ThemeProvider } from 'next-themes';
+
 export default function RootLayout({
   children,
 }: {
@@ -16,14 +17,14 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className=" bg-neutral-900">
-        <nav>
-          <GlobalNavBar/>
-        </nav>
-        <main>
-          {children}
-        </main>
-      </body>
+        <body className=" bg-neutral-900">
+          <nav>
+            <GlobalNavBar/>
+          </nav>
+          <main>
+            {children}
+          </main>
+        </body>
     </html>
   )
 }
