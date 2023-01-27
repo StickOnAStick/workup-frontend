@@ -14,6 +14,7 @@ export default async function page() {
       <div className="text-white gap-2 flex flex-col flex-grow justify-center align-center h-[calc(100vh-6rem)] md:h-[calc(100vh-3.5rem)] bg-neutral-900 scrollbar-hide">
         { 
           data?.map( (post, key) => {
+            {/* @ts-expect-error Server Component */}
             return <Post title={post.commentary} key={key} IMG_DATA={{COL_ID: post.collectionId, REC_ID: post.id, FILE_NAME: post.field}}/>
           })        
         }

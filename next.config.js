@@ -5,7 +5,8 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: '127.0.0.1',
-        port: '8090'
+        port: '8090',
+        pathname: '/api/files/**'
       }
     ]
   },
