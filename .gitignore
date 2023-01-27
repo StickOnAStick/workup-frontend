@@ -37,3 +37,5 @@ next-env.d.ts
 
 #backend
 /backend
+backend/pb_data/data.db
+backend/pb_data/logs.db
