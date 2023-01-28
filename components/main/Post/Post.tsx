@@ -11,8 +11,7 @@ async function getImage(ImageData: ImageData){
     const res = await fetch(
         `http://127.0.0.1:8090/api/files/${ImageData.COL_ID}/${ImageData.REC_ID}/${ImageData.FILE_NAME}`
         );
-    return res;
-    
+    return res;   
 }
 
 export default async function Post ({
@@ -28,7 +27,7 @@ export default async function Post ({
    
 
     return (
-        <div className="bg-yellow-500 h-fit rounded-lg flex flex-col justify-center text-black">
+        <div className="bg-neutral-750 h-fit rounded-lg flex flex-col justify-center text-black">
             <h3 className="px-3 pt-2 pb-1">Content:{title}</h3>
             <div className="">
                 This is a sample post

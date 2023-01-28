@@ -16,6 +16,9 @@ module.exports = {
       },
       screens: {
         'xs': '370px',
+      },
+      gridTemplateColumns: {
+        'scroll-sidebars': '1fr 4fr 1fr'
       }
     },
   },
