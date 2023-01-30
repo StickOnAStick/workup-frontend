@@ -23,7 +23,7 @@ export default async function page() {
             { 
               data?.map( (post, key) => {
                 {/* @ts-expect-error Server Component */} //remove if update fixed bug
-                return <Post title={post.commentary} key={key} IMG_DATA={{COL_ID: post.collectionId, REC_ID: post.id, FILE_NAME: post.image}}/>
+                return <Post title={post.comentary} key={key} IMG_DATA={{COL_ID: post.collectionId, REC_ID: post.id, FILE_NAME: post.image}}/>
               })        
             }
           </div>

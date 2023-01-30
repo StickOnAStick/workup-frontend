@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ForwardRefRenderFunction } from "react";
 import TempPostImage from '../../../public/image.jpg'
 
 interface ImageData { 
@@ -7,7 +8,7 @@ interface ImageData {
     FILE_NAME: string;
 }
 
-async function getImage(ImageData: ImageData){
+async function getImage(ImageData: ImageData) {
     const res = await fetch(
         `http://127.0.0.1:8090/api/files/${ImageData.COL_ID}/${ImageData.REC_ID}/${ImageData.FILE_NAME}`
         );
@@ -27,15 +28,19 @@ export default async function Post ({
    
 
     return (
-        <div className="bg-neutral-750 h-fit rounded-lg flex flex-col justify-center text-black">
-            <h3 className="px-3 pt-2 pb-1">Content:{title}</h3>
-            <div className="">
-                This is a sample post
+        <div className="bg-neutral-750 h-fit rounded-lg flex flex-col justify-center text-white">
+            <div className="w-full block relative ">
                {image && 
-                <Image src={image.url} width={200} height={150} alt="alt grill"/>               
+                <Image src={image.url} width={300} height={150} style={{
+                        width: 'fit-content',
+                        height: 'auto',
+                        
+                    }}
+                     alt="alt grill" placeholder="blur" blurDataURL={image.url} 
+                     />               
                }
+               <h3 className="px-3 pt-2 pb-1 font-medium">{title}</h3>
             </div>
-            <footer>This is the footer</footer>
         </div>
     )
 }
