@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { ForwardRefRenderFunction } from "react";
-import TempPostImage from '../../../public/image.jpg'
 
 interface ImageData { 
     COL_ID: string;
@@ -24,21 +22,19 @@ export default async function Post ({
     IMG_DATA?: ImageData
 }) {
     let image = null;
-    if(IMG_DATA) image = await getImage(IMG_DATA);
+    if(IMG_DATA?.FILE_NAME) image = await getImage(IMG_DATA);
    
 
     return (
-        <div className="bg-neutral-750 h-fit rounded-lg flex flex-col justify-center text-white">
-            <div className="w-full block relative ">
-               {image && 
-                <Image src={image.url} width={300} height={150} style={{
-                        width: 'fit-content',
-                        height: 'auto',
-                        
-                    }}
-                     alt="alt grill" placeholder="blur" blurDataURL={image.url} 
-                     />               
-               }
+        <div className="bg-neutral-750 h-fit rounded-lg flex flex-col justify-center text-white overflow-clip border-b border-b-neutral-500">
+            <div className="w-full">
+                    {image && 
+                    <div className="w-full h-auto">
+                        <Image src={image.url} width={700} height={525}  style={{objectFit: 'cover', width: '100%', height: 'auto'}}
+                            alt="alt grill" placeholder="blur" blurDataURL={image.url}
+                            />    
+                    </div>           
+                    }
                <h3 className="px-3 pt-2 pb-1 font-medium">{title}</h3>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import Post from "../components/main/Post/Post";
+import ChatList from "../components/main/chatList/ChatList";
 
 async function getPostList() {
   const postListResponse = await fetch('http://127.0.0.1:8090/api/collections/posts/records');
@@ -12,9 +13,10 @@ export default async function page() {
   
   return (
       <div className="h-[calc(100vh-6rem)] md:h-[calc(100vh-3.5rem)] bg-neutral-900 scrollbar-hide">
-        <div className="grid grid-cols-scroll-sidebars gap-3  h-[calc(100vh-6rem)] md:h-[calc(100vh-3.5rem)]">
-          <div id="Friend List">This is the friends list zone</div>
-          <div id="post list" className="flex flex-col gap-3 mx-24 my-3">
+        <div className="grid grid-cols-1 sm:grid-cols-scroll-sidebars gap-3  h-[calc(100vh-6rem)] md:h-[calc(100vh-3.5rem)]">
+          <div id="Friend List" className="hidden sm:block text-white">This is the friends list zone</div>
+          
+          <div id="post list" className="flex flex-col gap-3 sm:mx-24 my-3">
             <div className="flex justify-end">
               <button className="bg-white rounded-full p-1 font-medium">
               Create post
@@ -27,7 +29,8 @@ export default async function page() {
               })        
             }
           </div>
-          <div id="chat list">Chat List </div>
+          
+          <ChatList/>
         </div>
       </div>
   )
