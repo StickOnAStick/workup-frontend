@@ -14,13 +14,17 @@ export default function Error({
     }, [error]);
 
     return (
-        <div >
-            <h2 className='bg-red-800 text-white'>Something went wrong!</h2>
-            <button onClick={
-                ()=>reset()
-                }>
-                Reset
-            </button>
+        <div className=' text-white flex justify-center'>
+            <div className='flex flex-col justify-center w-1/2 bg-red-500 h-fit rounded-md'>
+                <h2 >Something went wrong!</h2>
+                <button
+                className=' bg-yellow-400 w-16 rounded-lg'
+                onClick={
+                    ()=>reset()
+                    }>
+                    Reset
+                </button>
+            </div>
         </div>
     )
 }

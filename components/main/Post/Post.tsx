@@ -16,14 +16,12 @@ async function getImage(ImageData: ImageData) {
 export default async function Post ({
     title,
     IMG_DATA,
-
 }:{
     title?: string,
     IMG_DATA?: ImageData
 }) {
     let image = null;
     if(IMG_DATA?.FILE_NAME) image = await getImage(IMG_DATA);
-   
 
     return (
         <div className="bg-neutral-750 h-fit rounded-lg flex flex-col justify-center text-white overflow-clip border-b border-b-neutral-500">
