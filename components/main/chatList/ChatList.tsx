@@ -1,9 +1,5 @@
 
-async function getChatList() {
-    
-}
-
-export default async function ChatList () {
+export default  function ChatList () {
 
 
     return (
