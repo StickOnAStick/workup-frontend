@@ -8,10 +8,7 @@ async function getPostList() {
   const fetchPostRecords = await pb.collection('posts').getList(undefined, 10, {
     sort: '-created',
   });
-  console.log(fetchPostRecords);
-  //const postListResponse = await fetch('http://127.0.0.1:8090/api/collections/posts/records');
-  //const postListData = await postListResponse.json();
-  //console.log(postListData)
+ 
   return fetchPostRecords.items;
 }
 
