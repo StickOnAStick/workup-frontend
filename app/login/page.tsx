@@ -35,14 +35,14 @@ export default function Login () {
                         ...loginData,
                         email: e.target.value
                     })}}
-                        className="rounded-md text-black font-semibold text-xl py-1 px-2 " ></input>
+                        className="rounded-md text-white font-semibold text-xl py-1 px-2 " ></input>
                 </div>
                 <div>
                     <input type="password" placeholder="Password" value={loginData.pass} 
                     onChange={(e)=>{setLoginData({
                         ...loginData, pass: e.target.value
                     })}}
-                        className="rounded-md text-black text-xl py-1 px-2 font-semibold"></input>
+                        className="rounded-md text-white text-xl py-1 px-2 font-semibold"></input>
                 </div>
 
                 <div className="flex justify-around my-4">

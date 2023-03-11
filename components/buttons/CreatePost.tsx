@@ -38,8 +38,8 @@ const CreatePost = () => {
             formData.append('comentary', target.comentary.value);
             formData.append('image', image);
 
-            
-            console.log("Data: \n", image);
+
+            //console.log("Data: \n", image);
 
             const createRecord = await pb.collection('posts').create(formData)
             .then(
